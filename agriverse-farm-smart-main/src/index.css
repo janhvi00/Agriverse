@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Agriverse Design System - Farming-inspired modern design
+All colors MUST be HSL for consistency.
+*/
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 45 15% 97%;
+    --foreground: 120 15% 15%;
+
+    /* Card system */
+    --card: 45 20% 98%;
+    --card-foreground: 120 15% 15%;
+
+    /* Popover system */
+    --popover: 45 20% 98%;
+    --popover-foreground: 120 15% 15%;
+
+    /* Agricultural primary - Deep forest green */
+    --primary: 120 60% 25%;
+    --primary-foreground: 45 25% 95%;
+    --primary-glow: 120 55% 35%;
+
+    /* Harvest secondary - Warm golden wheat */
+    --secondary: 45 85% 75%;
+    --secondary-foreground: 120 25% 20%;
+
+    /* Earth muted tones */
+    --muted: 35 20% 90%;
+    --muted-foreground: 120 10% 45%;
+
+    /* Sky accent - Fresh blue */
+    --accent: 200 75% 65%;
+    --accent-foreground: 120 25% 15%;
+
+    /* Growth colors */
+    --success: 110 70% 45%;
+    --success-foreground: 45 25% 95%;
+
+    /* Alert colors */
+    --destructive: 15 85% 55%;
+    --destructive-foreground: 45 25% 95%;
+    
+    /* Warning - Yellow-orange highlight */
+    --warning: 35 95% 65%;
+    --warning-foreground: 120 25% 15%;
+
+    /* Interactive elements */
+    --border: 35 25% 85%;
+    --input: 35 25% 92%;
+    --ring: 120 60% 25%;
+
+    --radius: 0.75rem;
+
+    /* Farming gradients */
+    --gradient-earth: linear-gradient(135deg, hsl(35 40% 70%), hsl(25 45% 60%));
+    --gradient-growth: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-harvest: linear-gradient(135deg, hsl(var(--secondary)), hsl(45 90% 85%));
+    --gradient-sky: linear-gradient(180deg, hsl(var(--accent)), hsl(200 85% 85%));
+
+    /* Agricultural shadows */
+    --shadow-farm: 0 4px 20px -4px hsl(var(--primary) / 0.15);
+    --shadow-harvest: 0 8px 30px -8px hsl(var(--secondary) / 0.25);
+    --shadow-growth: 0 10px 40px -10px hsl(var(--success) / 0.2);
+
+    /* Transitions */
+    --transition-farm: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-grow: transform 0.2s ease-out;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme with farming elements */
+    --background: 120 20% 8%;
+    --foreground: 45 25% 95%;
+
+    --card: 120 15% 12%;
+    --card-foreground: 45 25% 95%;
+
+    --popover: 120 15% 12%;
+    --popover-foreground: 45 25% 95%;
+
+    --primary: 120 50% 70%;
+    --primary-foreground: 120 25% 15%;
+    --primary-glow: 120 60% 80%;
+
+    --secondary: 45 70% 60%;
+    --secondary-foreground: 120 25% 15%;
+
+    --muted: 120 10% 20%;
+    --muted-foreground: 45 15% 70%;
+
+    --accent: 200 60% 75%;
+    --accent-foreground: 120 25% 15%;
+
+    --success: 110 60% 60%;
+    --success-foreground: 120 25% 15%;
+
+    --destructive: 15 75% 65%;
+    --destructive-foreground: 45 25% 95%;
+
+    --border: 120 15% 25%;
+    --input: 120 15% 20%;
+    --ring: 120 50% 70%;
+
+    --sidebar-background: 120 20% 8%;
+    --sidebar-foreground: 45 25% 90%;
+    --sidebar-primary: 120 50% 70%;
+    --sidebar-primary-foreground: 120 25% 15%;
+    --sidebar-accent: 120 15% 15%;
+    --sidebar-accent-foreground: 45 25% 90%;
+    --sidebar-border: 120 15% 25%;
+    --sidebar-ring: 120 50% 70%;
+  }
+}
+
+/* Utility classes for farming theme */
+@layer components {
+  /* Gradient backgrounds */
+  .bg-gradient-earth {
+    background: var(--gradient-earth);
+  }
+  
+  .bg-gradient-growth {
+    background: var(--gradient-growth);
+  }
+  
+  .bg-gradient-harvest {
+    background: var(--gradient-harvest);
+  }
+  
+  .bg-gradient-sky {
+    background: var(--gradient-sky);
+  }
+
+  /* Agricultural shadows */
+  .shadow-farm {
+    box-shadow: var(--shadow-farm);
+  }
+  
+  .shadow-harvest {
+    box-shadow: var(--shadow-harvest);
+  }
+  
+  .shadow-growth {
+    box-shadow: var(--shadow-growth);
+  }
+
+  /* Transitions */
+  .transition-farm {
+    transition: var(--transition-farm);
+  }
+  
+  .transition-grow {
+    transition: var(--transition-grow);
+  }
+
+  /* Hover effects */
+  .hover-grow {
+    @apply transition-grow hover:scale-105;
+  }
+  
+  .hover-lift {
+    @apply transition-farm hover:-translate-y-1;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
